@@ -11,7 +11,8 @@ Hint tells us there are two bugs in the source code. Upon examining it, somethin
 They only seed the random function once, and that seed is the money you start with.
 Therefore, I ran a seperate online c compiler. I mirrored the actual program with my online one basically.
 
-I first entered the seed and played on the online one, got a bogus result, and then it showed me the correct one. 
+I first entered the seed and played on the online one, got a bogus result, and then it showed me the correct roulette spin after losing. 
+
 After that, I bet all my money on the correct number to double it. However, after doing this once, the random pattern
 started to fade. Turns out the problem was on:
 
