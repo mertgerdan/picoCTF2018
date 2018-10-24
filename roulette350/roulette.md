@@ -32,7 +32,7 @@ started to fade. Turns out the problem was on:
 It executed rand() twice when losing and once when winning, so after losing on the online one and winning on the real one, they desynchronized.
 I simply deleted one of the rand() calls on _else_ in my mirror program and I was good to go. Or so I thought.
 
-The real program timed me out before I could reach 1 billion like this, even when I did it as fast it was possible.
+The real program timed me out before I could reach 1 billion $ like this, even when I did it as fast as it was possible.
 Then I saw this piece of code:
 
 ```
