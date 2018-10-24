@@ -16,7 +16,7 @@ After that, I bet all my money on the correct number to double it. However, afte
 started to fade. Turns out the problem was on:
 
 
-if (spin == choice) {
+```if (spin == choice) {
     cash += 2*bet;
     puts(win_msgs[rand()%NUM_WIN_MSGS]);
     wins += 1;
@@ -25,6 +25,7 @@ if (spin == choice) {
     puts(lose_msgs1[rand()%NUM_LOSE_MSGS]);
     puts(lose_msgs2[rand()%NUM_LOSE_MSGS]);
   }
+  ```
   
 It executed rand() twice when losing and once when winning, so after losing on the online one and winning on the real one, they desynchronized.
 I simply deleted one of the rand() calls on _else_ in my mirror program and I was good to go. Or so I thought.
@@ -32,11 +33,13 @@ I simply deleted one of the rand() calls on _else_ in my mirror program and I wa
 The real program timed me out before I could reach 1 billion like this, even when I did it as fast it was possible.
 Then I saw this piece of code:
 
+```
 if (wins >= MAX_WINS) {
 	printf("Wow you won %lu times? Looks like its time for you cash you out.\n", wins);
 	printf("Congrats you made $%lu. See you next time!\n", cash);
 	exit(-1);
       }
+ ```
       
 This tells me that if you win more than 16 times, the program exits.
 _5000(max possible money)*2^16_ only yields 327 million, so something was up.
@@ -44,6 +47,7 @@ _5000(max possible money)*2^16_ only yields 327 million, so something was up.
 The second bug was yet to be found, and it had something to do with how much money you could bet.
 I knew that the _get_long()_ method was funky, so I deeply examined it.
 
+```
 long get_long() {
     printf("> ");
     uint64_t l = 0;
@@ -63,6 +67,7 @@ long get_long() {
       c = getchar();
     return l;
 }
+```
 
 And I found it!
 LONG_MAX was equal to 2147483647 but l, the variable was a unsigned int! Unsigned ints have a max value of 4294967295.
