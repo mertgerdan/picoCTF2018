@@ -1,7 +1,8 @@
-Here, it tells us that the password check is being done on the client side which is a no-no.
+**Here, it tells us that the password check is being done on the client side which is a no-no.**
 Quickly viewing the source gives us this:
 
-  function verify() {
+'''
+   function verify() {
     checkpass = document.getElementById("pass").value;
     split = 4;
     if (checkpass.substring(split*7, split*8) == '}') {
@@ -16,7 +17,6 @@ Quickly viewing the source gives us this:
                   }
                 }
               }
-      
             }
           }
         }
@@ -26,3 +26,4 @@ Quickly viewing the source gives us this:
       alert("Incorrect password");
     }
   }
+  '''
