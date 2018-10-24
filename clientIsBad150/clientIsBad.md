@@ -1,7 +1,8 @@
 **Here, it tells us that the password check is being done on the client side which is a no-no.**
+
 Quickly viewing the source gives us this:
 
-'''
+```
    function verify() {
     checkpass = document.getElementById("pass").value;
     split = 4;
@@ -26,4 +27,4 @@ Quickly viewing the source gives us this:
       alert("Incorrect password");
     }
   }
-  '''
+  ```
