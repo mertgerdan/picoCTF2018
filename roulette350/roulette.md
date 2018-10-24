@@ -72,7 +72,7 @@ long get_long() {
 ```
 
 And I found it!
-LONG_MAX was equal to 2147483647 but l, the variable was a unsigned int! Unsigned ints have a max value of 4294967295.
+LONG_MAX was equal to 2147483647 but **_l_**, the variable was a unsigned int! Unsigned ints have a max value of 4294967295.
 So after three successful wins and then betting more money than you have and losing yields the flag.
 
 What a long one this was!
