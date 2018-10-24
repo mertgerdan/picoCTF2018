@@ -16,7 +16,7 @@ After that, I bet all my money on the correct number to double it. However, afte
 started to fade. Turns out the problem was on:
 
 
-```if (spin == choice) {
+```hif (spin == choice) {
     cash += 2*bet;
     puts(win_msgs[rand()%NUM_WIN_MSGS]);
     wins += 1;
