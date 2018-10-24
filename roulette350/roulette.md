@@ -44,7 +44,7 @@ if (wins >= MAX_WINS) {
  ```
       
 This tells me that if you win more than 16 times, the program exits.
-_5000(max possible money)*2^16_ only yields 327 million, so something was up.
+_5000(max possible money)*2^16_ only yields 327 million $, which means that reaching 1 billion $ in under 16 moves was impossible, so I knew something else was up.
 
 The second bug was yet to be found, and it had something to do with how much money you could bet.
 I knew that the _get_long()_ method was funky, so I deeply examined it.
