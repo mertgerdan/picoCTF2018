@@ -9,7 +9,7 @@ Uh, this one. This took me quite some time to find and was pretty annoying.
 Hint tells us there are two bugs in the source code. Upon examining it, something strikes me.
 
 They only seed the random function once, and that seed is the money you start with.
-Therefore, I ran a seperate online c compiler. I mirrored the actual program with my online one.
+Therefore, I ran a seperate online c compiler. I mirrored the actual program with my online one basically.
 
 I first entered the seed and played on the online one, got a bogus result, and then it showed me the correct one. 
 After that, I bet all my money on the correct number to double it. However, after doing this once, the random pattern
